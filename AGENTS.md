@@ -1,0 +1,79 @@
+# AGENTS.md — Sketchstamp
+
+> **For every agent working in this repo:** read this file at the start of every prompt, follow it, and update it whenever we learn or decide something new. This file is the project's memory. If something here is wrong or outdated, fix it in the same change.
+
+## What we are building
+
+**Sketchstamp** is an app for sharing hand-drawn sketches of places around the world: town squares, churches, monuments, cafés, and similar spots.
+
+Core idea:
+- Every sketch is drawn by hand inside a **square** (13 × 13 cm on paper), then photographed or scanned and uploaded.
+- Each sketch is tied to a **real place** and shown on a world map.
+- Sketches are collected like **stamps**: a personal collection of places you've drawn, and a place page showing everyone's drawings of the same spot.
+
+GitHub description:
+> Share hand-drawn square sketches of places around the world: squares, churches, monuments, cafés.
+
+## How we came to the name
+
+Candidates considered, grouped by angle:
+- **Square / town square:** Plaza, Piazza, Trg (Serbian for "square"), Four Corners
+- **Hand-drawing:** Placesketch, Inkplace, Wandersketch, Doodlemap
+- **Postcards and stamps:** Stamped, Postmark, Sketchcard
+- **Atlas / collection:** Sketch Atlas, Atlas of Squares
+
+What we checked:
+- **Stamped** — rejected. Already used by a 2011 iOS recommendation app (stamped.com) where people "stamped" places on a map, and by Stamped.io, an active Shopify reviews product. The "stamp + places" space is also crowded (StampAnytime, Stamplore, Stamp°D, Hexstamp).
+- **SketchMap** — taken twice (a Leaflet-based web tool on Gumroad and an iOS map-doodle app).
+- **Sketchstamp** — no existing software project found. Only generic uses (craft rubber stamps, Procreate "sketch stamp" brushes, "stamp tool" features in drawing apps).
+
+**Decision: Sketchstamp.** It says what the app does: a hand-drawn sketch that works like a stamp from a place.
+
+Still to verify by hand: domains (sketchstamp.com / .app / .io), App Store and Google Play, trademarks (EUIPO and USPTO, classes 9 and 42), and social handles (@sketchstamp on Instagram). Avoid branding that resembles the design tool "Sketch."
+
+## Landscape (what already exists)
+
+- **Sktchr (iPhone)** — closest competitor. A global map of sketch spots, sketches tied to real places, Urban Sketchers meetups. Aimed at practicing artists: planning, light conditions, paint-kit tracking. Verifies a sketch's location and time for events. Still small.
+- **SketchMap (Gumroad)** — small Leaflet.js script for pinning sketches on a map. Not a community.
+- **SketchMap (iOS), Draw Maps** — drawing *on* a map, not drawings *of* places.
+- **Instagram + Urban Sketchers** — the real incumbent. Sharing is spread across Facebook groups, Instagram hashtags, and chapter blogs. There is no single place that shows every drawing of one square.
+
+## Urban Sketchers (USk)
+
+- Global non-profit for people who draw on location where they live and travel. Started in 2007 by Gabriel Campanario; non-profit since 2009; hundreds of chapters worldwide.
+- Their manifesto requires drawing **on location**, not from photos or memory, and sharing online.
+- Possible early users and partners: contact a local chapter (e.g. in Serbia) for a pilot.
+- Do **not** use their name in our branding.
+
+## How we stand out (working ideas)
+
+- **The square format as a constraint.** Every sketch is the same tile, so collections look consistent on a profile and on a map.
+- **Collecting mechanics.** One square per place, "drawn 12 churches in 4 countries," place pages showing how many people drew the same spot.
+- **Casual users, not just serious sketchers.** Anyone who doodles a café in a notebook is welcome.
+- **Chapters / groups.** A meetup page with everyone's squares from that day.
+
+## Open decisions
+
+- **On-location only (USk-style) or open?** Purist mode would verify GPS and time at upload; open mode allows drawings from memory or photos.
+- Target audience first: USk sketchers or everyday doodlers.
+- Platform and tech stack — not decided yet.
+
+## Assets
+
+- `sketch_squares_A4.png` — printable A4 template at 300 DPI: two 13 × 13 cm squares, 0.5 mm black border, centered, 21 mm gap between them, 8 mm top and bottom margins. Print at **100% / Actual size**, not "Fit to page." Larger gaps would require smaller squares (e.g. 12.5 cm) because two 13 cm squares use 260 of the page's 297 mm.
+
+## General truths (working agreements)
+
+1. **Read this file first, every prompt.** Check whether your task touches anything decided here.
+2. **Update this file as we discover things.** New decisions, rejected ideas, research findings, and open questions go here, briefly, with the reason.
+3. **Record why, not only what.** A rejected option with its reason saves us from revisiting it.
+4. **Verify before you claim.** Facts about competitors, names, prices, laws, or APIs change; look them up rather than relying on memory, and note when something is unverified.
+5. **Keep it simple.** Prefer the smallest thing that works; add complexity only when a real need appears.
+6. **Don't run builds or tests unless asked.** Vanja compiles and runs the code himself.
+7. **Ask when a decision is hard to undo.** Otherwise make a reasonable call and note it here.
+8. **Respect other people's work.** No copying other apps' branding, artwork, or text; no using Urban Sketchers' name.
+9. **Keep this file short and current.** Remove what's no longer true instead of piling on.
+
+## Changelog
+
+- 2026-10-17 — Project started. Name chosen: Sketchstamp. Research on competitors and Urban Sketchers. A4 print template created.
