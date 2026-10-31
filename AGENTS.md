@@ -61,6 +61,7 @@ Still to verify by hand: domains (sketchstamp.com / .app / .io), App Store and G
 ## Assets
 
 - `sketch_squares_A4.png` — printable A4 template at 300 DPI: two 13 × 13 cm squares, 0.5 mm black border, centered, 21 mm gap between them, 8 mm top and bottom margins. Print at **100% / Actual size**, not "Fit to page." Larger gaps would require smaller squares (e.g. 12.5 cm) because two 13 cm squares use 260 of the page's 297 mm.
+- `sketch_square_A5.png` — printable A5 template at 300 DPI: one 13 × 13 cm square, 0.5 mm black border, centered, 9 mm side margins, 40 mm top and bottom margins. Print at **100% / Actual size** on A5 paper.
 
 ## General truths (working agreements)
 
@@ -77,3 +78,4 @@ Still to verify by hand: domains (sketchstamp.com / .app / .io), App Store and G
 ## Changelog
 
 - 2026-10-17 — Project started. Name chosen: Sketchstamp. Research on competitors and Urban Sketchers. A4 print template created.
+- 2026-10-31 — A5 print template created (single square).
