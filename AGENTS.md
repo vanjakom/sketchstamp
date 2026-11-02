@@ -67,7 +67,7 @@ Still to verify by hand: domains (sketchstamp.com / .app / .io), App Store and G
 - Sketches go in `storage/<user>/<longitude>@<latitude>@<date>.jpg` (see README). Longitude first, `.` decimal, exactly 5 decimals; date `YYYYMMDD`. `@` as separator because `_`/`-` clash with negative coordinates and the date suffix keeps repeat sketches of one spot apart.
 - Stored image = inside of the square only (perspective-corrected, frame trimmed), paper tone kept as is. JPG (quality 92), not PNG: it's a photo, and PNG was ~4× larger (1.7 MB vs 0.44 MB) with no visible gain.
 - `storage/repository.js` lists every sketch (`window.SKETCHSTAMP_REPOSITORY`: user, longitude, latitude, date, image). Keep it in sync when adding sketches. A `.js` file with a global, not JSON + fetch, so `index.html` works opened straight from disk (file:// blocks fetch).
-- `index.html` (root) — single Leaflet map, one pin per sketch, popup shows the image. Leaflet 1.9.4 from unpkg, OSM tiles. No build step.
+- `index.html` (root) — single Leaflet map, one pin per sketch, popup shows the image. Leaflet 1.9.4 from unpkg, OSM tiles. No build step. Pin icon: `blue_and_grey/art.png` from Vanja's `trek-mate-pins` repo, loaded via vanjakom.github.io (not raw.githubusercontent), shown at 38 px, centered on the point.
 
 ## General truths (working agreements)
 
