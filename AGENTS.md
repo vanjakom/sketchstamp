@@ -66,6 +66,8 @@ Still to verify by hand: domains (sketchstamp.com / .app / .io), App Store and G
 
 - Sketches go in `storage/<user>/<longitude>@<latitude>@<date>.jpg` (see README). Longitude first, `.` decimal, exactly 5 decimals; date `YYYYMMDD`. `@` as separator because `_`/`-` clash with negative coordinates and the date suffix keeps repeat sketches of one spot apart.
 - Stored image = inside of the square only (perspective-corrected, frame trimmed), paper tone kept as is. JPG (quality 92), not PNG: it's a photo, and PNG was ~4× larger (1.7 MB vs 0.44 MB) with no visible gain.
+- `storage/repository.js` lists every sketch (`window.SKETCHSTAMP_REPOSITORY`: user, longitude, latitude, date, image). Keep it in sync when adding sketches. A `.js` file with a global, not JSON + fetch, so `index.html` works opened straight from disk (file:// blocks fetch).
+- `index.html` (root) — single Leaflet map, one pin per sketch, popup shows the image. Leaflet 1.9.4 from unpkg, OSM tiles. No build step.
 
 ## General truths (working agreements)
 
@@ -84,4 +86,4 @@ Still to verify by hand: domains (sketchstamp.com / .app / .io), App Store and G
 - 2026-10-17 — Project started. Name chosen: Sketchstamp. Research on competitors and Urban Sketchers. A4 print template created.
 - 2026-10-17 — Conversation extracted into the project: README, template script in `tools/`, full history in `docs/conversation-2026-10-17.md`.
 - 2026-10-19 — Project pushed to GitHub: github.com/vanjakom/sketchstamp. Template moved to `assets/`.
-- 2026-11-02 — Storage naming decided; first sketch added: `storage/vanjakom/19.98582@46.17729@20261031.jpg` (Röszke 2).
+- 2026-11-02 — Storage naming decided; first sketch added: `storage/vanjakom/19.98582@46.17729@20261031.jpg` (Röszke 2). Map `index.html` + `storage/repository.js` added.

@@ -26,12 +26,20 @@ storage/<user>/<longitude>@<latitude>@<date>.jpg
 
 Example: `storage/vanjakom/19.98582@46.17729@20261031.jpg` — Röszke border crossing, drawn 31 Oct 2026.
 
+Every sketch is also listed in `storage/repository.js` (user, longitude, latitude, date, image path). **When you add a sketch, add its entry there too**, or it won't show on the map.
+
+## Map
+
+`index.html` shows all sketches from `storage/repository.js` as pins on a Leaflet map (OpenStreetMap tiles); clicking a pin opens the sketch in a popup. Open it directly from disk or serve the repo root (e.g. GitHub Pages).
+
 ## Repository layout
 
 ```
 AGENTS.md                      project memory and rules for agents (read first)
 CLAUDE.md                      points Claude Code at AGENTS.md
 README.md                      this file
+index.html                     map of all sketches (Leaflet)
+storage/repository.js          list of all sketches, read by index.html
 assets/sketch_squares_A4.png   printable sketch template
 tools/make_template.py         script that generates the template
 docs/conversation-2026-10-17.md  how the project started: naming, research, decisions
