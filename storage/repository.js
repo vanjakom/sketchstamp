@@ -15,5 +15,12 @@ window.SKETCHSTAMP_REPOSITORY = [
     latitude: 48.39490,
     date: "20261101",
     image: "storage/vanjakom/16.16140@48.39490@20261101.jpg"
+  },
+  {
+    user: "vanjakom",
+    longitude: 16.16154,
+    latitude: 48.39473,
+    date: "20261101",
+    image: "storage/vanjakom/16.16154@48.39473@20261101.jpg"
   }
 ];
