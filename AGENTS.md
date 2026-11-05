@@ -92,4 +92,5 @@ Still to verify by hand: domains (sketchstamp.com / .app / .io), App Store and G
 - 2026-11-05 — Added `storage/vanjakom/16.45870@48.24157@20261104.jpg`. Drawn on the back of a geocache sheet (GCBWT3X), date on paper written as 20241104, stored as 20261104 (assumed typo).
 - 2026-11-05 — Added `storage/vanjakom/16.31857@48.11218@20261104.jpg` (Vapiano). Same 2024→2026 date fix.
 - 2026-11-05 — Added `storage/vanjakom/16.49844@48.25222@20261105.jpg` (motel22, room 105, view of the garden). Photo was backlit against a window, so the paper tone is darker than the others; kept as is.
-- 2026-11-05 — Second user `leka`: added `storage/leka/21.89522@43.32345@20261018.jpg` (Trabant, Nišville, Niš Fortress).
+- 2026-11-05 — Second user `leka`: added `storage/leka/21.89522@43.32345@20261018.jpg` (Trabant, Nišville, Niš Fortress). Rotated 90° CCW: drawn sideways on the sheet.
+- 2026-11-05 — Third user `vera`: added `storage/vera/21.89534@43.32332@20261018.jpg` (Niš Fortress gate, colored pencils). Same spot and day as leka's — first place with sketches from two users.
