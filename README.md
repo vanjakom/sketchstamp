@@ -30,6 +30,8 @@ Example: `storage/vanjakom/19.98582@46.17729@20261031.jpg` — Röszke border cr
 
 Every sketch is also listed in `storage/repository.js` (user, longitude, latitude, date, image path). **When you add a sketch, add its entry there too**, or it won't show on the map.
 
+`storage/sketchstamp.dot` lists every sketch as a dot in the [humandot format](https://github.com/vanjakom/dot/blob/main/DOT.md), newest first, tagged `#sketchstamp`, `#<date>` and `by <user>`. Add a dot there too when you add a sketch.
+
 ## Map
 
 `index.html` shows all sketches from `storage/repository.js` as pins on a Leaflet map (OpenStreetMap tiles); clicking a pin opens the sketch in a popup. Open it directly from disk or serve the repo root (e.g. GitHub Pages). `index.html?image=<image path>` zooms to one sketch and opens its popup.
@@ -46,7 +48,8 @@ CLAUDE.md                      points Claude Code at AGENTS.md
 README.md                      this file
 index.html                     map of all sketches (Leaflet)
 timeline.html                  all sketches, newest first, 10 per page
-storage/repository.js          list of all sketches, read by index.html
+storage/repository.js          list of all sketches, read by index.html and timeline.html
+storage/sketchstamp.dot        all sketches as humandot dots, newest first
 assets/sketch_squares_A4.png   printable sketch template (A4, two squares)
 assets/sketch_square_A5.png    printable sketch template (A5, one square)
 tools/make_template.py         script that generates the A4 template
