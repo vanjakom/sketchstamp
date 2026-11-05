@@ -37,6 +37,10 @@
     // "20261031" -> "2026-10-31"
     const formatDate = d => `${d.slice(0, 4)}-${d.slice(4, 6)}-${d.slice(6, 8)}`;
 
+    // index.html?image=<path from repository.js> zooms to that sketch and opens its popup (used by timeline.html).
+    const focusImage = new URLSearchParams(location.search).get("image");
+    let focusMarker = null;
+
     const markers = sketches.map(s => {
       // encodeURI keeps "/" but escapes anything unusual; "@" is valid in URL paths.
       const src = encodeURI(s.image);
@@ -45,12 +49,17 @@
           `<a href="${src}" target="_blank"><img src="${src}" alt="Sketch by ${s.user}"></a>` +
           `<div class="meta">${s.user} · ${formatDate(s.date)}</div>` +
         `</div>`;
-      return L.marker([s.latitude, s.longitude], { icon: sketchIcon })
+      const marker = L.marker([s.latitude, s.longitude], { icon: sketchIcon })
         .bindPopup(popup, { maxWidth: 320 })
         .addTo(map);
+      if (s.image === focusImage) focusMarker = marker;
+      return marker;
     });
 
-    if (markers.length > 0) {
+    if (focusMarker) {
+      map.setView(focusMarker.getLatLng(), 18);
+      focusMarker.openPopup();
+    } else if (markers.length > 0) {
       map.fitBounds(L.featureGroup(markers).getBounds(), { padding: [40, 40], maxZoom: 14 });
     }
   </script>

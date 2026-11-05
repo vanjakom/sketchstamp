@@ -32,7 +32,11 @@ Every sketch is also listed in `storage/repository.js` (user, longitude, latitud
 
 ## Map
 
-`index.html` shows all sketches from `storage/repository.js` as pins on a Leaflet map (OpenStreetMap tiles); clicking a pin opens the sketch in a popup. Open it directly from disk or serve the repo root (e.g. GitHub Pages).
+`index.html` shows all sketches from `storage/repository.js` as pins on a Leaflet map (OpenStreetMap tiles); clicking a pin opens the sketch in a popup. Open it directly from disk or serve the repo root (e.g. GitHub Pages). `index.html?image=<image path>` zooms to one sketch and opens its popup.
+
+## Timeline
+
+`timeline.html` lists all sketches newest first, 10 per page (`?page=2`, …). Each entry shows the date and user, the coordinates (linking to the sketch on the map), and the image. It reads `storage/repository.js`, so new sketches appear automatically.
 
 ## Repository layout
 
@@ -41,6 +45,7 @@ AGENTS.md                      project memory and rules for agents (read first)
 CLAUDE.md                      points Claude Code at AGENTS.md
 README.md                      this file
 index.html                     map of all sketches (Leaflet)
+timeline.html                  all sketches, newest first, 10 per page
 storage/repository.js          list of all sketches, read by index.html
 assets/sketch_squares_A4.png   printable sketch template (A4, two squares)
 assets/sketch_square_A5.png    printable sketch template (A5, one square)

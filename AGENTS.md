@@ -68,7 +68,8 @@ Still to verify by hand: domains (sketchstamp.com / .app / .io), App Store and G
 - Sketches go in `storage/<user>/<longitude>@<latitude>@<date>.jpg` (see README). Longitude first, `.` decimal, exactly 5 decimals; date `YYYYMMDD`. `@` as separator because `_`/`-` clash with negative coordinates and the date suffix keeps repeat sketches of one spot apart.
 - Stored image = inside of the square only (perspective-corrected, frame trimmed), paper tone kept as is. JPG (quality 92), not PNG: it's a photo, and PNG was ~4× larger (1.7 MB vs 0.44 MB) with no visible gain.
 - `storage/repository.js` lists every sketch (`window.SKETCHSTAMP_REPOSITORY`: user, longitude, latitude, date, image). Keep it in sync when adding sketches. A `.js` file with a global, not JSON + fetch, so `index.html` works opened straight from disk (file:// blocks fetch).
-- `index.html` (root) — single Leaflet map, one pin per sketch, popup shows the image. Leaflet 1.9.4 from unpkg, OSM tiles. No build step. Pin icon: `blue_and_grey/art.grey.png` from Vanja's `trek-mate-pins` repo, loaded via vanjakom.github.io (not raw.githubusercontent), shown at 38 px, centered on the point.
+- `index.html` (root) — single Leaflet map, one pin per sketch, popup shows the image. Leaflet 1.9.4 from unpkg, OSM tiles. No build step. Pin icon: `blue_and_grey/art.grey.png` from Vanja's `trek-mate-pins` repo, loaded via vanjakom.github.io (not raw.githubusercontent), shown at 38 px, centered on the point. `index.html?image=<image path>` zooms to that sketch (z18) and opens its popup.
+- `timeline.html` (root) — all sketches, newest date first (same date: later entry in `repository.js` first), 10 per page (`?page=N`). Each entry: "<date> by <user>", then `lon@lat` linking to `index.html?image=…`, then the image. Reads `repository.js`, so it updates itself; keep it in step if the entry fields change.
 
 ## General truths (working agreements)
 
@@ -94,3 +95,4 @@ Still to verify by hand: domains (sketchstamp.com / .app / .io), App Store and G
 - 2026-11-05 — Added `storage/vanjakom/16.49844@48.25222@20261105.jpg` (motel22, room 105, view of the garden). Photo was backlit against a window, so the paper tone is darker than the others; kept as is.
 - 2026-11-05 — Second user `leka`: added `storage/leka/21.89522@43.32345@20261018.jpg` (Trabant, Nišville, Niš Fortress). Rotated 90° CW: drawn sideways on the sheet.
 - 2026-11-05 — Third user `vera`: added `storage/vera/21.89534@43.32332@20261018.jpg` (Niš Fortress gate, colored pencils). Same spot and day as leka's — first place with sketches from two users.
+- 2026-11-05 — `timeline.html` added (paged list, newest first); `index.html` gained `?image=` deep link.
