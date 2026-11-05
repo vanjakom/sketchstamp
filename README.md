@@ -30,7 +30,7 @@ Example: `storage/vanjakom/19.98582@46.17729@20261031.jpg` — Röszke border cr
 
 Every sketch is also listed in `storage/repository.js` (user, longitude, latitude, date, image path). **When you add a sketch, add its entry there too**, or it won't show on the map.
 
-`storage/sketchstamp.dot` lists every sketch as a dot in the [humandot format](https://github.com/vanjakom/dot/blob/main/DOT.md), newest first, tagged `#sketchstamp`, `#<date>` and `by <user>`. Add a dot there too when you add a sketch.
+`storage/sketchstamp.dot` lists every sketch as a dot in the [humandot format](https://github.com/vanjakom/dot/blob/main/DOT.md), newest first, tagged `#sketchstamp`, `#<date>` and `by <user>`, with a link to the image on GitHub Pages. Add a dot there too when you add a sketch.
 
 ## Map
 
