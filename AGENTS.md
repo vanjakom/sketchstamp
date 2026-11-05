@@ -91,3 +91,4 @@ Still to verify by hand: domains (sketchstamp.com / .app / .io), App Store and G
 - 2026-11-02 — Storage naming decided; first sketch added: `storage/vanjakom/19.98582@46.17729@20261031.jpg` (Röszke 2). Map `index.html` + `storage/repository.js` added.
 - 2026-11-05 — Added `storage/vanjakom/16.45870@48.24157@20261104.jpg`. Drawn on the back of a geocache sheet (GCBWT3X), date on paper written as 20241104, stored as 20261104 (assumed typo).
 - 2026-11-05 — Added `storage/vanjakom/16.31857@48.11218@20261104.jpg` (Vapiano). Same 2024→2026 date fix.
+- 2026-11-05 — Added `storage/vanjakom/16.49844@48.25222@20261105.jpg` (motel22, room 105, view of the garden). Photo was backlit against a window, so the paper tone is darker than the others; kept as is.
