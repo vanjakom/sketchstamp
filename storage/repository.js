@@ -127,5 +127,12 @@ window.SKETCHSTAMP_REPOSITORY = [
     latitude: 48.21027,
     date: "20261107",
     image: "storage/leka/16.37404@48.21027@20261107.jpg"
+  },
+  {
+    user: "mamijana",
+    longitude: 16.37404,
+    latitude: 48.21027,
+    date: "20261107",
+    image: "storage/mamijana/16.37404@48.21027@20261107.jpg"
   }
 ];
