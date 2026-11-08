@@ -36,7 +36,7 @@
       .map(s => {
         const coordinates = `${s.longitude.toFixed(5)}@${s.latitude.toFixed(5)}`;
         return `<div class="sketch">` +
-            `<div>${formatDate(s.date)} by ${s.user}</div>` +
+            `<div>${formatDate(s.date)} by <a href="user/index.html?name=${encodeURIComponent(s.user)}">${s.user}</a></div>` +
             `<div><a href="index.html?image=${encodeURIComponent(s.image)}">${coordinates}</a></div>` +
             `<img src="${encodeURI(s.image)}" alt="Sketch by ${s.user}" loading="lazy">` +
           `</div>`;

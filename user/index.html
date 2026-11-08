@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sketchstamp — user</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    body { max-width: 640px; margin: 0 auto; padding: 16px; font: 15px/1.4 sans-serif; color: #222; }
+    nav { margin-bottom: 16px; }
+    h1 { margin: 0 0 4px; font-size: 24px; }
+    .summary { color: #555; margin-bottom: 16px; }
+    #map { height: 300px; margin-bottom: 24px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+    .grid img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+    .grid .meta { font-size: 12px; color: #555; margin-top: 4px; }
+    .sketch-popup img { display: block; width: 200px; height: 200px; object-fit: cover; }
+  </style>
+</head>
+<body>
+  <nav><a href="../index.html">map</a> · <a href="../timeline.html">timeline</a></nav>
+  <div id="content"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="../storage/repository.js"></script>
+  <script>
+    // user/index.html?name=<user>. On GitHub Pages /user/<user> also works: 404.html redirects it here.
+    const name = new URLSearchParams(location.search).get("name") || "";
+    const content = document.getElementById("content");
+
+    const escapeHtml = t => t.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    // "20261031" -> "2026-10-31"
+    const formatDate = d => `${d.slice(0, 4)}-${d.slice(4, 6)}-${d.slice(6, 8)}`;
+    // Paths in repository.js are relative to the site root; this page is one level down.
+    const imageSrc = s => encodeURI("../" + s.image);
+
+    // Newest first. Same date: later entry in repository.js first (same order as timeline.html).
+    const sketches = (window.SKETCHSTAMP_REPOSITORY || [])
+      .map((s, i) => ({ ...s, index: i }))
+      .filter(s => s.user === name)
+      .sort((a, b) => b.date.localeCompare(a.date) || b.index - a.index);
+
+    if (sketches.length === 0) {
+      document.title = "Sketchstamp — user not found";
+      content.innerHTML = `<h1>${escapeHtml(name || "No user")}</h1><p>No sketches found for this user.</p>`;
+    } else {
+      document.title = `Sketchstamp — ${name}`;
+      const places = new Set(sketches.map(s => `${s.longitude.toFixed(5)}@${s.latitude.toFixed(5)}`)).size;
+      const first = sketches[sketches.length - 1].date;
+      const last = sketches[0].date;
+
+      content.innerHTML =
+        `<h1>${escapeHtml(name)}</h1>` +
+        `<div class="summary">${sketches.length} sketch${sketches.length === 1 ? "" : "es"} · ` +
+          `${places} place${places === 1 ? "" : "s"} · ` +
+          `${formatDate(first)}${first === last ? "" : ` – ${formatDate(last)}`}</div>` +
+        `<div id="map"></div>` +
+        `<div class="grid">` +
+          sketches.map(s =>
+            `<div>` +
+              `<a href="../index.html?image=${encodeURIComponent(s.image)}">` +
+                `<img src="${imageSrc(s)}" alt="Sketch by ${escapeHtml(s.user)}" loading="lazy">` +
+              `</a>` +
+              `<div class="meta">${formatDate(s.date)}</div>` +
+            `</div>`
+          ).join("") +
+        `</div>`;
+
+      const map = L.map("map");
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      // Same pin as index.html.
+      const sketchIcon = L.icon({
+        iconUrl: "https://vanjakom.github.io/trek-mate-pins/blue_and_grey/art.grey.png",
+        iconSize: [38, 38],
+        iconAnchor: [19, 19],
+        popupAnchor: [0, -19]
+      });
+
+      const markers = sketches.map(s =>
+        L.marker([s.latitude, s.longitude], { icon: sketchIcon })
+          .bindPopup(
+            `<div class="sketch-popup">` +
+              `<a href="../index.html?image=${encodeURIComponent(s.image)}"><img src="${imageSrc(s)}" alt=""></a>` +
+              `<div>${formatDate(s.date)}</div>` +
+            `</div>`,
+            { maxWidth: 220 })
+          .addTo(map));
+      map.fitBounds(L.featureGroup(markers).getBounds(), { padding: [30, 30], maxZoom: 15 });
+    }
+  </script>
+</body>
+</html>

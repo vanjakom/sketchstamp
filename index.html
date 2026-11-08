@@ -47,7 +47,7 @@
       const popup =
         `<div class="sketch-popup">` +
           `<a href="${src}" target="_blank"><img src="${src}" alt="Sketch by ${s.user}"></a>` +
-          `<div class="meta">${s.user} · ${formatDate(s.date)}</div>` +
+          `<div class="meta"><a href="user/index.html?name=${encodeURIComponent(s.user)}">${s.user}</a> · ${formatDate(s.date)}</div>` +
         `</div>`;
       const marker = L.marker([s.latitude, s.longitude], { icon: sketchIcon })
         .bindPopup(popup, { maxWidth: 320 })

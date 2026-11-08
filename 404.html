@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sketchstamp</title>
+  <script>
+    // GitHub Pages serves this file for any path that doesn't exist.
+    // .../user/<name> -> .../user/index.html?name=<name>, so user pages need no file per user.
+    // Works both at the site root and under a project path like /sketchstamp/.
+    const match = location.pathname.match(/^(.*\/)user\/([^\/]+)\/?$/);
+    if (match) {
+      location.replace(`${match[1]}user/index.html?name=${match[2]}`);
+    }
+  </script>
+</head>
+<body style="font: 15px/1.4 sans-serif; padding: 16px;">
+  <p>Page not found.</p>
+</body>
+</html>
