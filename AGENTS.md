@@ -102,3 +102,4 @@ Still to verify by hand: domains (sketchstamp.com / .app / .io), App Store and G
 - 2026-11-05 — `storage/sketchstamp.dot` added (all sketches as humandot dots); kept in sync as part of the add-a-sketch routine.
 - 2026-11-08 — Added `storage/vanjakom/16.30375@48.18305@20261106.jpg` (Tiergarten Schönbrunn, Pferdehaus).
 - 2026-11-08 — Added `storage/vanjakom/16.30361@48.18299@20261106.jpg` (maple in front of the toilets, Schönbrunn). Date on paper read as 20261105 at first; Vanja confirmed 20261106.
+- 2026-11-08 — Added `storage/vanjakom/16.30291@48.18230@20261106.jpg` (Kaiserpavillon, Schönbrunn). Paper says 20261105; Vanja set 20261106.
