@@ -108,3 +108,4 @@ Still to verify by hand: domains (sketchstamp.com / .app / .io), App Store and G
 - 2026-11-08 — Added `storage/vanjakom/16.37360@48.21028@20261107.jpg` (Hotel Topazz).
 - 2026-11-08 — Added `storage/leka/16.37404@48.21027@20261107.jpg` (Le Burger, ordering kiosk).
 - 2026-11-08 — Fourth user `mamijana`: added `storage/mamijana/16.37404@48.21027@20261107.jpg` (portrait of Leka, Le Burger). Same coordinates and date as leka's sketch; different user folder, so no file name clash.
+- 2026-11-08 — Added `storage/leka/16.37393@48.21019@20261107.jpg` (Mercedes taxi in front of Le Burger). Paper names leka and mamijana; stored under leka as Vanja said.
