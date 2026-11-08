@@ -72,7 +72,7 @@ Still to verify by hand: domains (sketchstamp.com / .app / .io), App Store and G
 - `timeline.html` (root) — all sketches, newest date first (same date: later entry in `repository.js` first), 10 per page (`?page=N`). Each entry: "<date> by <user>", then `lon@lat` linking to `index.html?image=…`, then the image. Reads `repository.js`, so it updates itself; keep it in step if the entry fields change.
 - `storage/sketchstamp.dot` — every sketch as a dot in Vanja's humandot format (spec: github.com/vanjakom/dot, `DOT.md`), same order as the timeline (newest date first; same date: later `repository.js` entry first). Each dot: `lon, lat` (5 decimals), then tags `#sketchstamp`, `#<YYYYMMDD>`, `by <user>`, image URL `https://vanjakom.github.io/sketchstamp/<image path>` (GitHub Pages; not verified from here that Pages is enabled), 3-space indent, one blank line between dots, `[humandot]` first line. `#sketchstamp` is written on every dot rather than as a `[tag:]` directive, so a dot copied elsewhere keeps it.
 
-**Routine when adding a sketch:** (1) image into `storage/<user>/`, (2) entry appended to `storage/repository.js`, (3) dot inserted into `storage/sketchstamp.dot` at its date position, (4) changelog line here. Timeline and map need no change.
+**Routine when adding a sketch:** (1) image into `storage/<user>/`, (2) entry appended to `storage/repository.js`, (3) dot inserted into `storage/sketchstamp.dot` at its date position, (4) changelog line here, (5) show Vanja the processed image, then commit and push. Timeline and map need no change.
 
 ## General truths (working agreements)
 
