@@ -104,3 +104,4 @@ Still to verify by hand: domains (sketchstamp.com / .app / .io), App Store and G
 - 2026-11-08 — Added `storage/vanjakom/16.30361@48.18299@20261106.jpg` (maple in front of the toilets, Schönbrunn). Date on paper read as 20261105 at first; Vanja confirmed 20261106.
 - 2026-11-08 — Added `storage/vanjakom/16.30291@48.18230@20261106.jpg` (Kaiserpavillon, Schönbrunn). Paper says 20261105; Vanja set 20261106.
 - 2026-11-08 — Added `storage/vanjakom/16.36988@48.19893@20261107.jpg` (TU Wien, Karlsplatz).
+- 2026-11-08 — Added `storage/leka/16.37081@48.19905@20261107.jpg` (sitting in the park in front of TU Wien).
