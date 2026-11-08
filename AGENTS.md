@@ -100,3 +100,4 @@ Still to verify by hand: domains (sketchstamp.com / .app / .io), App Store and G
 - 2026-11-05 — Third user `vera`: added `storage/vera/21.89534@43.32332@20261018.jpg` (Niš Fortress gate, colored pencils). Same spot and day as leka's — first place with sketches from two users.
 - 2026-11-05 — `timeline.html` added (paged list, newest first); `index.html` gained `?image=` deep link.
 - 2026-11-05 — `storage/sketchstamp.dot` added (all sketches as humandot dots); kept in sync as part of the add-a-sketch routine.
+- 2026-11-08 — Added `storage/vanjakom/16.30375@48.18305@20261106.jpg` (Tiergarten Schönbrunn, Pferdehaus).
