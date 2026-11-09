@@ -111,3 +111,4 @@ Still to verify by hand: domains (sketchstamp.com / .app / .io), App Store and G
 - 2026-11-08 — Fourth user `mamijana`: added `storage/mamijana/16.37404@48.21027@20261107.jpg` (portrait of Leka, Le Burger). Same coordinates and date as leka's sketch; different user folder, so no file name clash.
 - 2026-11-08 — Added `storage/leka/16.37393@48.21019@20261107.jpg` (Mercedes taxi in front of Le Burger). Paper names leka and mamijana; stored under leka as Vanja said.
 - 2026-11-08 — User pages: `user/index.html?name=<user>` (dynamic, from `repository.js`) plus `404.html` redirect for `/user/<user>` on GitHub Pages. User names in map popups and timeline link to it.
+- 2026-11-09 — Added `storage/vanjakom/18.81868@47.49527@20261108.jpg` (MOL Fresh Corner restaurant, an old stove).
